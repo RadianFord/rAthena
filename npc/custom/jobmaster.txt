@@ -183,8 +183,9 @@ function	Job_Options	{
 			case Job_Novice:
 				// First job change
 				Job_Options(.@job_opt,Job_Swordman,
-					Job_Mage, Job_Archer, Job_Acolyte, Job_Merchant, Job_Thief,
-					Job_Super_Novice, Job_Taekwon, Job_Gunslinger, Job_Ninja);
+					Job_Mage, Job_Archer, Job_Acolyte, Job_Merchant, Job_Thief);
+				if( .Expanded )
+					Job_Options(.@job_opt, Job_Super_Novice, Job_Taekwon, Job_Gunslinger, Job_Ninja);
 				if( .BabyNovice )
 					Job_Options(.@job_opt, Job_Baby);
 				break;
@@ -458,6 +459,7 @@ OnInit:
 	// Settings
 	.ThirdClass = true;			// Enable third classes?
 	.RebirthClass = true;			// Enable rebirth classes?
+	.Expanded = true;			// Enable Expanded classes: Ex. Super Novice, Ninja, Taekwon, Gunslinger? (default: true)
 	.SecondExpanded = true;		// Enable new expanded second classes: Ex. Super Novice, Kagerou/Oboro, Rebellion?
 	.BabyNovice = true;	// Enable Baby novice classes? Disable it if you like player must have parent to get job baby.
 	.BabyClass = true;				// Enable Baby classes?
